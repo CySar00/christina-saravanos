@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🎶 Christina Saravanos</title>
+  <meta name="description" content="Postdoc at MIT AeroAstro. Research in optimization, machine learning, and control theory." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Raleway:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  
+  <style>
+
+    :root {
+    --bg: #f9f9f9;         /* main background – soft off-white */
+    --elev-1: #ffffff;     /* card backgrounds – true white */
+    --text: #1e1f22;       /* main text – near-black */
+    --muted: #8a8a8a;      /* secondary text */
+    --accent: #0576c1;     /* link color – ChatGPT blue tone */
+    --accent-weak: #cde3ff;
+    --card: #ffffff;
+    --border: #e2e2e2;
+    --btn-bg: #f2f3f5;
+    --btn-bg-hover: #e8eaed;
+    --tag: #eef1f4;
+    --maxw: 980px;
+  }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 15px;  /* Added to make main text smaller */
+    }
+    a { 
+      color: #8C4EA6; 
+      text-decoration: none; 
+    }
+    a:hover { text-decoration: underline; }
+    a:visited { color: #632C5B; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: 28px 20px 96px; }
+
+    /* Top nav */
+    .topbar { display: flex; align-items: center; justify-content: flex-end; gap: 18px; padding: 8px 0 20px; }
+    .topbar a { color: var(--muted); font-weight: 500; }
+    .topbar a.active { color: #5D2366; font-weight: 700; }
+
+    /* Hero */
+    .hero { display: grid; grid-template-columns: 1.5fr 1fr; gap: 28px; align-items: start; }
+    .title { font-size: 40px; color: var(--text); font-weight: 600; margin-bottom: 2px;   /* ↓ Tightens spacing below name */}
+    .subtitle { font-size: 27px; color: var(--text); margin-top: 4px; font-weight: 400; }
+    .portrait { width: 75%; max-width: 320px; border-radius: 10px; border: 1px solid var(--border); box-shadow: 0 6px 24px rgba(0,0,0,.35); object-fit: cover; }
+    .lead p { margin: 0 0 12px; }
+
+    hr.sep { border: none; border-top: 1px solid var(--border); margin: 28px 0; }
+
+    /* Sections */
+    section { margin-top: 26px; }
+    h2 { 
+      font-size: clamp(18px, 2.2vw, 24px); /* Reduced from 20px/2.6vw/28px */
+      color: #631766;
+      margin: 0 0 12px; 
+      letter-spacing: -0.01em; 
+    }
+
+    /* News list */
+    .news { display: grid; gap: 5px; }
+    .news-item { display: grid; grid-template-columns: 120px 1fr; gap: 10px; padding: 5px 0; border-bottom: 1px dashed var(--border); }
+    .news-date { color: var(--muted); font-weight: 600; }
+
+    /* Publications */
+    .pubs-note { color: var(--muted); font-size: 14px; margin-bottom: 6px; }
+    .pub { 
+      display: block;  /* Changed from grid */
+      padding: 16px 14px; 
+      background: var(--card); 
+      border: 1px solid var(--border); 
+      border-radius: 12px; 
+      margin-bottom: 14px; 
+    }
+    .pub-img {
+      display: none;  /* Hide images */
+    }
+    .pub-title { 
+      font-size: 15px;  /* Changed from 20px to match project headers */
+      font-weight: 700;
+      margin: 0 0 4px;
+      color: #5E0C53;  /* Changed to match project headers */
+    }
+    .pub-authors { margin: 0 0 6px; }
+    .pub-venue {
+        margin: 0 0 10px;
+      }
+      .venue-name {
+        color: #8C4EA6;  /* Changed to match link color */
+        font-weight: 650;
+      }
+      .author-me {
+        color: #3A084F;  /* Changed to match emphasized text color */
+        font-weight: 650;
+      }
+    .btns { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 700; letter-spacing: .02em; padding: 6px 10px; border-radius: 8px; background: var(--btn-bg); color: var(--text); border: 1px solid var(--border); text-decoration: none; }
+    .btn:hover { background: var(--btn-bg-hover); text-decoration: none; }
+    .btn[data-role="details"] { 
+      color: #520748; 
+    }
+
+    .btn[data-role="abstract"] {
+      color: #731570;
+    }
+
+    .btn[data-role="cite"] {
+      color: #961B92;
+    }
+
+    .btn[data-role="details"]:not(.clicked) {
+      color: #6B439C;
+    }
+
+    .btn[data-role="details"][href*="Additional"] {
+      color: #4D3570;
+    }
+
+    details { background: var(--elev-1); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; }
+    details > summary { cursor: pointer; font-weight: 700; color: var(--muted); list-style: none; }
+    details > summary::marker, details > summary::-webkit-details-marker { display: none; }
+    details > summary::after { content: "›"; display: inline-block; transform: rotate(90deg); margin-left: 8px; opacity: .7; transition: transform .2s ease; }
+    details[open] > summary::after { transform: rotate(270deg); }
+
+    /* Footer */
+    footer { margin-top: 40px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); padding-top: 18px; }
+
+    /* Responsive */
+    .hero > div:last-child {
+      margin-top: 150px;
+    }
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; }
+      .topbar { justify-content: center; }
+      .news-item { grid-template-columns: 100px 1fr; }
+      .portrait { max-width: 220px; }
+      .hero > div:last-child {
+        margin-top: 0;
+      }
+      .pub {
+        grid-template-columns: 1fr;
+      }
+      .pub-img {
+        height: 180px;
+      }
+    }
+
+    strong, b {
+      font-weight: 600;
+      color: #3A084F;
+    }
+    details > summary { display: none; }
+
+    .lead p{
+      text-align: justify;
+    }
+
+    .abstract-box[hidden] { display: none; }
+
+    .abstract-box {
+      background: var(--elev-1);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-top: 8px;
+    }
+
+    .abstract-box p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: #444;          /* or var(--text) if you prefer */
+      text-align: justify;
+      text-justify: inter-word;
+      line-height: 1.65;
+    }
+
+    .cite-box[hidden] { display: none; }
+
+    .cite-box {
+      background: var(--elev-1);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-top: 8px;
+    }
+
+    .cite-box pre {
+      margin: 0;
+      white-space: pre;                /* preserve newlines exactly */
+      font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: #333;
+      overflow-x: auto;                /* scroll if long */
+    }
+
+    .notice {
+    background: #fff7c2; /* soft yellow */
+    border: 1px solid #f1d46a;
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin: 16px 0;
+    color: #5a4a00;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .emphasize {
+      font-weight: 700;
+      color: #6B1D54;
+    }
+
+    /* Experience and Education sections */
+.timeline {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) 3fr;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.timeline-left {
+  text-align: right;
+}
+
+.timeline-org {
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.timeline-loc {
+  color: var(--muted);
+  font-size: 0.9em;
+  margin-bottom: 2px;
+}
+
+.timeline-date {
+  color: var(--muted);
+  font-size: 0.9em;
+}
+
+.timeline-right h3 {
+  font-size: 1.1em;
+  color: var(--text);
+  margin: 0 0 8px;
+}
+
+.timeline-right p {
+  margin: 0 0 8px;
+  text-align: justify;
+}
+
+.timeline-right ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.timeline-right li {
+  margin-bottom: 4px;
+}
+
+@media (max-width: 640px) {
+  .timeline {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .timeline-left {
+    text-align: left;
+  }
+}
+
+.details-box[hidden] { display: none; }
+.details-box {
+  background: var(--elev-1);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  margin-top: 8px;
+}
+.details-box ul {
+  margin: 8px 0 0 0;
+  padding-left: 18px;
+}
+.details-box li {
+  margin-bottom: 4px;
+  color: #444;
+  font-size: 15px;  /* Added to ensure consistent size */
+}
+
+.timeline-right .btns {
+  margin: 8px 0;
+}
+
+/* Projects section */
+.project { 
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 14px;
+}
+
+.project-title {
+  font-size: 16px;  /* Further reduced from 18px */
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+/* Update position and degree title styles */
+.project-title.position-title,
+.project-title.degree-title {
+  font-size: 16px;  /* Reduced from 18px */
+  font-weight: 700;
+  margin: 0 0 8px;
+  color: #631766;
+}
+
+/* Notable Projects section title color */
+#notable-projects .project-title {
+  color: #5E0E53;
+}
+
+.project-description {
+  margin: 0 0 10px;
+  font-size: 15px;  /* Added to ensure consistent size */
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.tech-tag {
+  background: #F5F5F5;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid #e2e2e2;
+}
+
+/* Tech tag color progression - white background with purple text */
+.tech-tag:nth-child(1) { color: #B374F7; }
+.tech-tag:nth-child(2) { color: #A85FE8; }
+.tech-tag:nth-child(3) { color: #9D4AD9; }
+.tech-tag:nth-child(4) { color: #9235CA; }
+.tech-tag:nth-child(5) { color: #8720BB; }
+.tech-tag:nth-child(6) { color: #7C0BAC; }
+.tech-tag:nth-child(7) { color: #71069D; }
+.tech-tag:nth-child(8) { color: #66018E; }
+.tech-tag:nth-child(9) { color: #5B007F; }
+.tech-tag:nth-child(n+10) { color: #500070; }
+
+.text-muted {
+  color: var(--muted);
+  font-size: 0.9em;
+  margin-bottom: 8px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 20px;
+    align-items: start;
+  }
+  
+  .project-left {
+    text-align: right;
+  }
+  
+  .project-org {
+    font-weight: 600;
+    color: #3A084F;  /* Dark blue color */
+    margin-bottom: 4px;
+  }
+  
+  .project-loc {
+    color: #666666; /* Darker shade of gray compared to var(--muted) */
+    font-size: 0.9em;
+    margin-bottom: 4px;
+  }
+  
+  .project-date {
+    color: var(--muted);
+    font-size: 0.9em;
+  }
+  
+  @media (max-width: 768px) {
+    .project-grid {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .project-left {
+      text-align: left;
+    }
+  }
+
+  h4 { 
+      margin: 16px 0 8px;
+      font-size: 15px;
+      font-weight: 700;  /* Changed from normal back to bold */
+      color: #5E0C53;
+    }
+
+    .department-name {
+      font-size: 0.9em;
+      font-style: italic;
+      color: #666666;
+      margin-bottom: 8px;
+    }
+
+    /* small right-space when a details button has been activated */
+    .btn[data-role="details"].clicked {
+      margin-right: 1px;
+    }
+
+    /* optional smoothness (keeps change subtle) */
+    .btn {
+      transition: margin-right 80ms linear;
+    }
+
+    /* space below details box when opened so tags sit a bit further down */
+    .details-box.open {
+      margin-bottom: 8px;
+      transition: margin-bottom 120ms ease;
+    }
+
+    /* Update thesis and advisor styling in the education section */
+    .project-description span[style*="color: #572054"] {
+      color: #572054 !important;
+      font-style: italic;
+    }
+    
+    .project-description span[style*="color: #4C234A"] {
+      color: #4C234A !important;
+      font-style: italic;
+    }
+
+    .project-description span[style*="color: #333333"] {
+      color: #333333 !important;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Top navigation -->
+    <nav class="topbar" aria-label="Primary">
+      <a class="active" href="#about">Intro</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#publications">Publications</a>
+      <a href="#notable-projects">Notable Projects</a>
+      <a href="CV_Christina__Aug_Copy_ (1).pdf" target="_blank">CV</a>
+    </nav>
+
+    <!-- Hero -->
+    <header id="about" class="hero" role="banner">
+      <div>
+        <h1 class="title">Christina Saravanos</h1>
+        <div class="subtitle">AI Engineer & Machine Learning Specialist</div>
+        <div class="lead" style="margin-top:14px;">
+          <p> 
+            Hi, I'm Christina! I am a <span class="emphasize">Research Associate, Data Scientist, and AI Engineer</span> at <span class="emphasize">Nestlé</span> in Lausanne. I am passionate about <span class ="emphasize">designing and developing AI-driven solutions</span> that enhance productivity and impact across diverse domains and expertise levels. Over the past two years, I have applied various AI algorithms, including generative and agentic AI across multiple domains such as natural language processing and image processing to create solutions that help researchers and scientists work more effectively.
+          </p>
+          <p> 
+            Before joining Nestlé, I worked as a <span class="emphasize">Data Scientist</span> at Prisma Electronics S.A., where I <span class = "emphasize">developed cutting-edge solutions using time-series analysis and deep learning frameworks.</span> In addition, I contributed to the writing of EU funding proposals and published scientific articles and technical reports. Moreover, I completed internships in Zurich (IBM Research and Swiss Re), Luxembourg (The Goodyear Tire and Rubber Company), and Brussels (IBM), where I contributed to the development of <span class = "emphasize">innovative machine learning solutions in natural language processing, time-series analysis, and insurance risk analysis.</span>
+          </p>
+          <p> 
+            I earned my <span class = "emphasize">M.Sc. in Signal Processing and Communication Systems</span> from the University of Patras in Greece in 2020, where I developed a novel audio-fingerprinting scheme using sparse coding and dictionary learning approaches. I also completed a 5-year engineering program (equivalent to a B.Sc./M.Eng.) from the Department of Computer Engineering at the University of Patras in 2015, where I majored in Computer Engineering with a minor in Data Science.
+          </p>
+
+          <p>I have always been fascinated by how patterns can be extracted from different types of data and interpreted using various machine learning algorithms.</p>
+          
+          <p>My scientific interests lie in the fields of <span class = "emphasize">generative and agentic AI, natural language processing, and signal processing</span>. Through my experience and education, I have acquired programming skills in Python, MATLAB, and Java.</p>
+
+          <p>In my spare time, I enjoy taking photographs, traveling, attending concerts, and staying up-to-date with the ever-evolving world of AI.</p>
+
+          <p>See below for what I've been up to...</p>
+
+          <p>Contact:&nbsp&nbsp&nbsp<span style="font-family:'JetBrains Mono', monospace;">christina09saravanos [at] gmail [dot] com</span></p>
+          <p>Follow:&nbsp&nbsp&nbsp<a href="https://scholar.google.com/citations?user=WiqfAgcAAAAJ&hl=en&oi=ao" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-google-scholar"></i> Google Scholar</a>
+            <a href="https://www.linkedin.com/in/christina-saravanos-b2733932/" target="_blank" rel="noopener noreferrer" style="margin-left: 16px;"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          </p>
+        </div>
+      </div>
+      <div style="display:flex; justify-content:center;">
+        <img class="portrait" src="images/20240724_134149.jpg" alt="Portrait of Christina Saravanos" />
+      </div>
+    </header>
+
+    <hr class="sep" />
+
+    <!-- Experience -->
+    <section id="experience" aria-labelledby="experience-title">
+      <h2 id="experience-title">Experience</h2>
+
+      <article class="project project-grid">
+        <div class="project-left">
+          <div class="project-org">Nestlé</div>
+          <div class="project-loc">Lausanne, Switzerland</div>
+          <div class="project-date">Feb 2024 - Present</div>
+        </div>
+        <div>
+          <h3 class="project-title position-title">Research Associate, Data Scientist & AI Engineer</h3>
+          <p class="project-description">
+            Developing innovative solutions via conventional Machine Learning, Generative and Agentic AI in the domains of Natural Language and Image Processing.
+          </p>  
+          
+          <div class="btns">
+            <a class="btn" data-role="details" href="#">More Information</a>
+          </div>
+          <div class="details-box" hidden>
+            <h4>AI-Enabled Scientific Intelligence</h4>
+            <p class="project-description">Development of an AI-enabled platform that comprises an internal search engine, a chatbot, and an automated literature review process to facilitate researchers and scientists in their daily tasks within Nestlé.</p>
+            <div class="btns">
+              <a class="btn" data-role="details" href="#">Details</a>
+            </div>
+            <div class="details-box" hidden>
+              <p style="font-weight: 700; color: #5E1B56; margin: 0 0 4px 0;">Key Responsibilities</p>
+              <ul>
+                <li>Design, develop, and optimize the AI components of the platform to obtain effective real-time results.</li>
+                <li>Integrate state-of-the-art Generative and Agentic AI approaches and technologies to enhance the capabilities of the platform.</li>
+                <li>Present the use cases (internal search engine, chatbot, automated literature review process), the AI components, findings, and results to potential user teams within Nestlé.</li>
+                <li>Collaborate with developers, data engineers, and data scientists based in Switzerland, Portugal, and India to ensure seamless integration of AI components.</li>
+                <li>Continuously adapt the tasks of the AI stream in an agile environment to meet the evolving needs of the project.</li> 
+              </ul>
+               <p style="font-weight: 700; color: #5E1B56; margin: 12px 0 4px 0;">Key Contributions</p>
+              <ul>
+                <li>Contributed to the development of an internal search engine using cutting-edge approaches to retrieve relevant scientific publications and documents from a large corpus and extract information from these documents.</li>
+                <li>Contributed to the development of an intelligent chatbot that interacts with users and provides accurate responses based on its conversational history and its knowledge obtained from a large scientific corpus.</li>
+                <li>Contributed to the development of a literature, systematic, and state-of-the-art review that screens scientific articles and reports, extracts all necessary information, and generates a scientific report based on the information mentioned in the selected documents.</li>
+                <li>Implemented and optimized the AI components in Python used in various use cases during the different stages of the project's life cycle.</li>
+                <li>Conducted research and evaluated the effectiveness of various state-of-the-art models and technologies during the different stages of the project's life cycle.</li>
+              </ul>
+              <p style="font-weight: 700; color: #5E1B56; margin: 12px 0 4px 0;">Outcomes</p>
+              <ul>
+                <li>The Proof-of-Concept phases of the project and all use cases were successfully completed and down-selected to move on to subsequent phases (Minimal Viable Product, Prototype, Scaling-Up, and Production).</li>
+                <li>The platform successfully completed the first 6 phases of its life cycle and is now in the Production phase.</li>
+                <li>The platform is already being successfully used by hundreds of researchers and scientists based in Switzerland within Nestlé.</li>
+              </ul>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-tag">Agentic AI</span>
+              <span class="tech-tag">GenAI</span>
+              <span class="tech-tag">RAG</span>
+              <span class="tech-tag">tool-calling</span>
+              <span class="tech-tag">vector databases</span>
+              <span class="tech-tag">Ollama</span>
+              <span class="tech-tag">python</span>
+            </div>
+
+            <h4>Automation of Writing Discoveries Of On-Going and Future Projects</h4>
+            <p class="project-description">Developed a pipeline to facilitate Project Managers by automating the process of writing the discoveries of various projects via Generative AI.</p>
+            <div class="btns">
+              <a class="btn" data-role="details" href="#">Details</a>
+            </div>
+            <div class="details-box" hidden>
+                  <p style="font-weight: 700; color: #5E1B56; margin: 0 0 4px 0;">Key Contributions</p>
+              <ul>
+                <li>Developed a pipeline that automatically writes a paragraph summarizing the key discoveries and deliverables of a project based on user-defined input by utilizing LLMs and Retrieval Augmented Generation (RAG).</li>
+            </ul>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-tag">prompt engineering</span>
+              <span class="tech-tag">GPT</span>
+              <span class="tech-tag">LangChain</span>
+              <span class="tech-tag">python</span>
+            </div>
+
+            <h4>Computer Vision for Cell Colony Detection</h4>
+            <p class="project-description">Developed a pipeline that identifies cell colonies in microscopy plates by employing 
+              image processing and computer vision techniques to return the count of the detected colonies.
+             </p> 
+            <div class="btns">
+              <a class="btn" data-role="details" href="#">Details</a>
+            </div>
+            <div class="details-box" hidden>
+
+              <p style="font-weight: 700; color: #5E1B56; margin: 0 0 4px 0;">Key Responsibilities</p>
+              <ul>
+                <li>Design and develop a pipeline that effectively preprocesses microscopy images to detect all the cell colonies in microscopy plates.</li>
+              </ul> 
+
+               <p style="font-weight: 700; color: #5E1B56; margin: 12px 0 4px 0;">Key Contributions</p>
+              <ul>
+                <li>  Designed and developed an effective approach that pre-processes microscopy images by removing noise, light reflections and the texture of the microscopy plate to identify the cell colonies present in the images.</li>
+                <li>  Combined various computer vision techniques such as connected component analysis, bounding boxes and blob detection to detect all the cell colonies in a microscopy image regardless of their size and shape.</li>
+                <li>  Conducted research and evaluated the accuracy of various conventional and state-of-the-art techniques based on the given dataset.</li>  
+              </ul>
+              <p style="font-weight: 700; color: #5E1B56; margin: 12px 0 4px 0;">Outcomes</p>
+              <ul>
+                <li> During the Proof-of-Concept phase of this project, the accuracy of the developed approach ranges between 70% and 95% depending 
+                  on the population density of the cell coloninies and the lighting conditions of the microscopy images.</li>      
+              </ul>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-tag">Image Processing</span>
+              <span class="tech-tag">Computer Vision</span>
+            
+              <span class="tech-tag">OpenCV</span>
+              <span class="tech-tag">Python</span>
+             
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project-grid">
+        <div class="project-left">
+          <div class="project-org">Prisma Electronics S.A.</div>
+          <div class="project-loc">Athens, Greece</div>
+          <div class="project-date">Feb. 2023 - Sept. 2023</div>
+        </div>
+        <div>
+          <h3 class="project-title position-title">Data Scientist</h3>
+          <p class="project-description">
+            Contributed to the development of cutting-edge solutions that relied on time-series analysis and Deep Learning frameworks, the writing of scientific documents, and EU funding proposals.
+          </p>  
+          <div class="btns">
+            <a class="btn" data-role="details" href="#">More Information</a>
+          </div>
+          <div class="details-box" hidden>  
+            <h4>Forecasting A Ship's State Based On Digital Twins and Deep Learning Frameworks</h4>
+            <p class="project-description">
+              Developement of a pipeline used to forecast the future state of ships by using time-series data obtained 
+              from Digital Twins and Recurrent Neural Networks (RNNs).
+            </p>
+              
+            <div class="btns">
+              <a class="btn" data-role="details" href="#">Details</a>
+            </div>
+            <div class="details-box" hidden>
+              <p style="font-weight: 700; color: #5E1B56; margin: 0 0 4px 0;">Key Contributions</p>
+              <ul>
+                <li> Designed and developed an accurate scheme that preprocesses data obtained from a Digital Twin via time-series analysis.</li>
+                <li> Developed and optimized various RNN architectures such as LSTMs to forecast the future state of ships based on historical time-series data.</li>
+                <li> Estimated the future state of a ship based on a Key Performance Indicator (KPI) that corresponds to the ship's power efficiency  </li>      
+              </ul>
+            </div><div class="tech-stack">
+              <span class="tech-tag">forecasting</span>
+              <span class="tech-tag">RNN</span>
+              <span class="tech-tag">LSTM</span>
+              <span class="tech-tag">keras</span>
+              <span class="tech-tag">tenforflow</span>
+              <span class="tech-tag">time-series analysis</span>
+              <span class="tech-tag">python</span>
+            </div>
+
+
+            <h4>Estimating Air Pollutant Concentration In Urban Areas</h4>
+            <p class="project-description">Contributed to the development of a pipeline that estimated the concentration of air pollutants in Greek urban areas by utilizing data obtained from sensors and regression techniques.</p>
+            <div class="btns">
+              <a class="btn" data-role="details" href="#">Details</a>
+            </div>
+            <div class="details-box" hidden>
+                  <p style="font-weight: 700; color: #5E1B56; margin: 0 0 4px 0;">Key Contributions</p>
+              <ul>
+                <li>  Contributed to the development of a paradigm that preprocesses data concerning air pollutant concentration obtained from sensors during the COVID-19 lockdown in Greece.</li>
+                <li> Contributed to the development of a scheme that estimated the correlation between the percentage of air pollutant concentration and various environmental factors, such as humidity and temperature via Linear Regression.</li>   
+              </ul>
+
+                  <p style="font-weight: 700; color: #5E1B56; margin: 0 0 4px 0;">Outcomes</p>
+              <ul>
+                <li>The findings of this project were published in the scientific article <a href="#neighborhood-pollution-pub">"Neighborhood-Level Particle Pollution Assessment during the COVID-19 Pandemic via a Novel IoT Solution"</a></li>
+              </ul>
+
+
+
+            </div>
+            <div class="tech-stack">
+              <span class="tech-tag">time-series analysis</span>
+              <span class="tech-tag">linear regression</span>
+              <span class="tech-tag">scikit-learn</span>
+              <span class="tech-tag">python</span>
+            </div>
+
+            <div class="btns">
+              <a class="btn" data-role="details" href="#">Additional Responsibilities...</a>
+            </div>
+            <div class="details-box" hidden>
+              <ul>
+                <li>Contributed to writing proposals for soliciting funding by the European Union.</li>
+                <li>Wrote articles and technical reports.</li>
+              </ul>
+            </div>
+
+            
+        </div>
+      </article>
+
+      <article class="project project-grid">
+        <div class="project-left">
+          <div class="project-org">IBM Research</div>
+          <div class="project-loc">Ruschlikon, Zurich, Switzerland</div>
+          <div class="project-date">Sep 2021 - Feb. 2022</div>
+        </div>
+        <div>
+          <h3 class="project-title position-title">Research Intern</h3>
+          <p class="project-description">
+            Developed Python packages to extract entities and their relationships from unstructured PDF documents via NLP.
+          </p>
+          <div class="btns">
+            <a class="btn" data-role="details" href="#">More Information</a>
+          </div>
+          <div class="details-box" hidden>
+            <h4>Python Packages For Entity Recognition And Relationship Extraction From Entity Reports Via Natural Language Processing (NLP)</h4>
+            <p class="project-description">Development of Python packages for Named Entity Recognition and Relationship Extraction annotators via NLP to find and extract entities and their respective relationships from PDF documents concerning enterprises.</p>
+            
+            <div class="btns">
+              <a class="btn" data-role="details" href="#">Details</a>
+            </div>
+            <div class="details-box" hidden>
+              <p style="font-weight: 700; color: #5E1B56; margin: 0 0 4px 0;">Key Contributions</p>
+              <ul>
+                <li>Developed effective Named Entity Recognition and Relationship Extraction annotators to identify and extract entities and their respective relationships from text and tables of unstructured PDF documents.</li>
+                <li>Developed several workflows to populate a Knowledge Graph using the entities and the relationships obtained by using the annotators from unstructured PDF documents.</li>    
+              </ul>
+              <p style="font-weight: 700; color: #5E1B56; margin: 12px 0 4px 0;">Outcomes</p>
+              <ul>
+                <li>The annotators were integrated into IBM's DeepSearch (released in 2022) and by IBM and its clients.</li>    
+                <li>The project was presented at the AMLP EPFL 2022 workshop.</li>  
+              </ul>
+            </div>
+            
+            <div class="tech-stack">
+              <span class="tech-tag">NLP</span>
+              <span class="tech-tag">Named-Entity Recognition</span>
+              <span class="tech-tag">spaCy</span>
+              <span class="tech-tag">Python</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project-grid">
+        <div class="project-left">
+          <div class="project-org">Swiss Re</div>
+          <div class="project-loc">Zurich, Switzerland</div>
+          <div class="project-date">Nov 2020 - May 2021</div>
+        </div>
+        <div>
+          <h3 class="project-title position-title">Actuarial Control and Claims Reserving R&D Intern</h3>
+          <p class="project-description">Contributed to the development of a forecasting scheme that predicts the values of incurred and outstanding losses over time.</p>
+          <div class="btns">
+            <a class="btn" data-role="details" href="#">More Information</a>
+          </div>
+          <div class="details-box" hidden>
+            <h4>Hierarchical Compartmental Reserving</h4>
+            <p class="project-description">Development of a pipeline to predict future cumulative and incremental outstanding and incurred losses via compartmental reserving approaches and forecasting algorithms.</p>
+            
+            <div class="btns">
+              <a class="btn" data-role="details" href="#">Details</a>
+            </div>
+            <div class="details-box" hidden>
+              <p style="font-weight: 700; color: #5E1B56; margin: 0 0 4px 0;">Key Contributions</p>
+              <ul>
+                <li>Developed in R and evaluated forecasting techniques used for actuarial data e.g., one- and two-stage compartmental reserving models to predict the incurred and outstanding losses using data obtained from market cycles from 2000 to 2019.</li>
+              </ul>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-tag">forecasting</span>
+              <span class="tech-tag">actuarial data</span>
+              <span class="tech-tag">R</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project-grid">
+        <div class="project-left">
+          <div class="project-org">The Goodyear Tire and Rubber Company</div>
+          <div class="project-loc">Colmar Berg, Luxembourg</div>
+          <div class="project-date">Mar. 2020 - Aug. 2020</div>
+        </div>
+        <div>
+          <h3 class="project-title position-title">Data Science Intern</h3>
+          <p class="project-description">
+            Developed a pipeline that processes Controller-Area Network (CAN) bus data from tire testing vehicles and predicts tire performance and wear.
+          </p>  
+          <div class="btns">
+            <a class="btn" data-role="details" href="#">More Information</a>
+          </div>
+          <div class="details-box" hidden>
+            <h4>Tire Treadwear Prediction Via Telematic Data And Machine Learning Techniques</h4>
+            <p class="project-description">
+              Development of a pipeline that predicts tire treadwear by preprocessing telematic data obtained from the Controller-Area Network (CAN) bus of tire testing vehicles, calibrating the sensors, and employing Deep Learning frameworks.
+            </p>  
+            <div class="btns">
+              <a class="btn" data-role="details" href="#">Details</a>
+            </div>
+            <div class="details-box" hidden>
+              <p style="font-weight: 700; color: #5E1B56; margin: 0 0 4px 0;">Key Contributions</p>
+              <ul>
+                <li>Developed a comprehensive data preprocessing scheme that removed noise and outliers from CAN signals obtained from tire testing vehicle sensors.</li>
+                <li>Designed and implemented sensor calibration pipelines based on 3-axis accelerometer measurements to ensure data accuracy.</li>
+                <li>Created LSTM-based forecasting models to predict future tire treadwear and 3-axis accelerometer values.</li>
+                <li>Developed a vehicle identification scheme based on CAN signal patterns and implemented data storage solutions using AWS DynamoDB.</li>
+                <li>Built an interactive Flask web application that integrates sensor calibration, signal preprocessing, vehicle route visualization, and treadwear forecasting.</li>
+                <li>Implemented MATLAB-to-Python wrappers and automated pipelines for seamless integration with existing infrastructure.</li>
+              </ul>
+                  
+              <p style="font-weight: 700; color: #5E1B56; margin: 0 0 4px 0;">Outcomes</p>
+              <ul>
+                <li>The webpage was used internally by engineers at Goodyear to calibrate sensors, preprocess CAN signals, and forecast future acceleration values.</li>
+                <li>The project was integrated into Goodyear's main infrastructure for processing CAN signals and forecasting tire quality and treadwear.</li>
+                
+            </div>
+            <div class="tech-stack">
+              <span class="tech-tag">CAN signals</span>
+              <span class="tech-tag">forecasting</span>
+              <span class="tech-tag">TensorFlow</span>
+              <span class="tech-tag">LSTM</span>
+              <span class="tech-tag">Dynamo</span>
+              <span class="tech-tag">Flask</span>
+              <span class="tech-tag">Python</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project-grid">
+        <div class="project-left">
+          <div class="project-org">IBM</div>
+          <div class="project-loc">Brussels, Belgium</div>
+          <div class="project-date">Jan 2022 - May 2022</div>
+        </div>
+        <div>
+          <h3 class="project-title position-title">Data Science Intern</h3>
+          <p class="project-description">Implemented a pipeline that verifies potential candidates' resumes based on their activity on social media via Natural Language Processing (NLP) and Machine Learning.</p>
+            
+            
+          <div class="btns">
+            <a class="btn" data-role="details" href="#">More Information</a>
+          </div>
+          <div class="details-box" hidden>
+            <h4>CV Verification and Augmentation</h4>
+            <p class="project-description"> 
+      
+              Development of a pipeline for CV verification by scraping candidates’ CV from LinkedIn and social media profile 
+              pages to cross-reference the information mentioned in resumes or in the LinkedIn profiles via NLP and Machine Learning (ML)
+              techniques. </p>
+            <div class="btns">
+              <a class="btn" data-role="details" href="#">Details</a>
+            </div>
+            <div class="details-box" hidden>
+              <p style="font-weight: 700; color: #5E1B56; margin: 0 0 4px 0;">Key Contributions</p>
+              <ul>
+                <li>Developed several crawlers to extract a candidate's LinkedIn profile page and their profile pages from various social media platforms.</li>
+                <li>Formulated a correlation score between the vocabulary used in a candidate's online posts and the skills section of their LinkedIn Profile using Watson AI.</li>
+                <li>Developed a webpage using Flask that displayed the information extracted from the LinkedIn profile page of various candidates and the correlation score between their skills and the vocabulary used in their online posts.</li>
+              </ul>
+              <p style="font-weight: 700; color: #5E1B56; margin: 0 0 4px 0;">Outcome</p>
+              <ul>
+                <li> The project was integrated into IBM's internal pipeline for CV verification and augmentation</li> 
+              </ul>
+            </div>
+            <div class="tech-stack">
+              <span class="tech-tag">social media analysis</span>
+              <span class="tech-tag">NLP</span>
+              <span class="tech-tag">Watson AI</span>
+              <span class="tech-tag">Python</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <hr class="sep" />
+
+    <!-- Education -->
+    <section id="education" aria-labelledby="education-title">
+      <h2 id="education-title">Education</h2>
+
+      <article class="project project-grid">
+        <div class="project-left">
+          <div class="project-org">University of Patras</div>
+          <div class="project-loc">Patras, Greece</div>
+          <div class="department-name">Depts. of Computer and Electrical Engineering</div>
+          <div class="project-date">2020</div>
+        </div>
+        <div>
+          <h3 class="project-title degree-title">M.Sc. in Signal Processing and Communication Systems</h3>
+          <p class="project-description" style="margin-bottom: 10px;"><span style="font-style: italic; color: #572054;">Audio-Fingerprinting Via The K-SVD Algorithm</span> | <span style="color: #333333; font-weight: 600;">Advisor:</span> <span style="font-style: italic; color: #4C234A;">Prof. K. Berberidis</span></p>
+          <div class="btns">
+            <a class="btn" data-role="details" href="#">More Information</a>
+          </div>
+          <div class="details-box" hidden>
+            <p style="font-weight: 700; color: #5E1B56; margin: 0 0 4px 0;">Key Developments</p>
+            <ul>
+              <li>Proposed, designed, developed, and evaluated a novel, robust audio-fingerprinting scheme via sparse coding (OMP) 
+                and dictionary learning (K-SVD) algorithms.
+              </li>
+              <li>Evaluated the robustness of the proposed technique using dictionaries learned in the time and frequency domain.</li>
+              <li>The proposed audio-fingerprinting scheme outperformed audio-fingerprinting paradigms that rely on conventional signal processing approaches such as computing the spectrogram and extracting local maxima as audio fingerprints.</li>
+            </ul>
+
+           <p style="font-weight: 700; color: #5E1B56; margin: 0 0 4px 0;">Outcomes</p>
+            <ul>
+              <li>The results of this thesis were published in the scientific article <a href="#audio-fingerprinting-pub">"Audio-Fingerprinting via Dictionary Learning"</a></li>
+            </ul>
+           
+            <div class="tech-stack">
+              <span class="tech-tag">Audio-Fingerprinting</span>
+              <span class="tech-tag">Audio Signal Processing</span>
+              <span class="tech-tag">Sparse Coding</span>
+              <span class="tech-tag">OMP</span>
+              <span class="tech-tag">Dictionary Learning</span>
+              <span class="tech-tag">K-SVD</span>
+              <span class="tech-tag">MATLAB</span>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project-grid">
+        <div class="project-left">
+          <div class="project-org">University of Patras</div>
+          <div class="project-loc">Patras, Greece</div>
+          <div class="department-name">Dept. of Computer Engineering & Informatics</div>
+          <div class="project-date">2015</div>
+        </div>
+        <div>
+          <h3 class="project-title degree-title">Engineering Diploma <i style="color: #81648F;">(eq. to a joint B.Sc./M.Eng. degree)</i></h3>
+          <p class="project-description" style="margin-bottom: 4px;"><span style="font-weight: 600; color: #520748;">Major:</span> Computer Engineering | <span style="font-weight: 600; color: #520748;">Minor:</span> Data Science</p>
+          <p class="project-description" style="margin-bottom: 10px;"><span style="font-style: italic; color: #572054;">Mining Knowledge From Social Networks</span> | <span style="color: #333333; font-weight: 600;">Advisor:</span> <span style="font-style: italic; color: #4C234A;">Assoc. Prof. C. Makris</span></p>
+          <div class="btns">
+          <a class="btn" data-role="details" href="#">More Information</a>
+          </div>
+          <div class="details-box" hidden>
+            <p style="font-weight: 700; color: #5E1B56; margin: 0 0 4px 0;">Key Developments</p>
+            <ul>
+              <li>Designed, developed, and evaluated a pipeline to find Twitter's most influential users in real time by combining several clustering and voting algorithms which were modified to run on streaming data.</li>
+              <li>The code ran on a Storm cluster, while NoSQL (MongoDB and Cassandra) databases were used to dynamically update the parameters of the clustering algorithms and initiate the voting techniques.</li>
+              <li>The developed approach was evaluated using real Twitter data obtained from the Twitter Streaming API.</li>
+            </ul>
+
+           <p style="font-weight: 700; color: #5E1B56; margin: 0 0 4px 0;">Outcomes</p>
+            <ul>
+              <li>The results of this thesis were published in the scientific article <a href="#discovering-influential-twitter-pub">"Discovering influential Twitter authors via clustering and ranking on Apache Storm"</a></li>
+            </ul>
+           <div class="tech-stack">
+              <span class="tech-tag">fuzzy means</span>
+              <span class="tech-tag">k-means</span>
+              <span class="tech-tag">GMM</span>
+              <span class="tech-tag">voting techniques</span>
+              <span class="tech-tag">Twitter</span>
+              <span class="tech-tag">Apache Storm</span>
+              <span class="tech-tag">NoSQL</span>
+               <span class="tech-tag">JAVA</span>
+            </div>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <hr class="sep" />
+
+    <!-- Publications -->
+    <section id="publications" aria-labelledby="pubs-title">
+      <h2 id="pubs-title">Publications</h2>
+      
+      <article class="pub">
+        <div>
+          <h3 class="pub-title">Forecasting stock market volatility using social media sentiment analysis</h3>
+          <p class="pub-authors"><span class="author-me">Christina Saravanos</span>, Andreas Kanavos</p>
+          <p class="pub-venue"><span class="venue-name">Neural Computing and Applications</span>, Springer.</p>
+          <div class="btns">
+            <a class="btn" data-role="abstract" href="#">Abstract</a>
+
+            <a class="btn" data-role="cite" href="#">Cite</a>
+          </div>
+          <div class="abstract-box" hidden>
+            <p>In the era where social media significantly influences public sentiment, platforms such as Twitter have become vital in predicting stock market trends. This paper presents a cutting-edge predictive model that integrates historical stock market data, Twitter sentiment analysis, and an extensive array of tweet-related features. Utilizing advanced regression techniques and deep neural networks, our model forecasts the daily closing prices of the U.S. stock market indices with notable accuracy and demonstrates a strong link between market values, sentiment scores, and social media activities. Our analysis particularly emphasizes the importance of tweet diffusion and the influence of prominent Twitter users in refining prediction accuracy. Contrary to conventional wisdom, we discovered that incorporating a wide range of tweet-derived features significantly improves the model’s performance without leading to sparsity …</p>
+          </div>   
+          <div class="cite-box" hidden>
+            <pre>@article{saravanos2025forecasting,
+            title={Forecasting stock market volatility using social media sentiment analysis},
+            author={Saravanos, Christina and Kanavos, Andreas},
+            journal={Neural Computing and Applications},
+            volume={37},
+            number={17},
+            pages={10771--10794},
+            year={2025},
+            publisher={Springer}}</pre>
+          </div>
+        </div>   
+      </article>
+
+      <article class="pub">
+        <div>
+          <h3 class="pub-title">Forecasting stock market alternations using social media sentiment analysis and deep neural networks</h3>
+          <p class="pub-authors"><span class="author-me">Christina Saravanos</span>, Andreas Kanavos</p>
+          <p class="pub-venue"><span class="venue-name">International Conference on Information, Intelligence, Systems and Applications (IISA)</span>, 2023</p>
+          <div class="btns">
+            <a class="btn" data-role="abstract" href="#">Abstract</a>
+            <a class="btn" data-role="cite" href="#">Cite</a>
+          </div>
+          <div class="abstract-box" hidden>
+            <p>Forecasting stock market volatility is a challenging task, primarily due to the influence of non-financial factors such as public opinion and sentiment. Social media platforms, particularly Twitter, have the potential to sway public sentiment and impact stock market prices. In this paper, we present a novel approach for predicting the volatility of multiple indices in the U.S. stock market by integrating historical closing prices with sentiment analysis of Twitter data using deep neural networks. Our approach involves extracting features from tweet metadata and analyzing the overall presence of authors on the platform to estimate future changes in index closing prices. Through our experiments, we observed a strong correlation between the predicted closing prices of an index, the sentiment expressed in tweets, and the extracted features. Despite the sparsity of the dataset, our applied neural networks exhibited robust per-formance. This study contributes to the expanding research on predicting stock market volatility through the utilization of social media sentiment analysis and deep learning techniques. The proposed approach holds promise for applications in financial decision-making and risk management.</p>
+          </div>   
+          <div class="cite-box" hidden>
+            <pre>@INPROCEEDINGS{10345902,
+  author={Saravanos, Christina and Kanavos, Andreas},
+  booktitle={2023 14th International Conference on Information, Intelligence, Systems & Applications (IISA)}, 
+  title={Forecasting Stock Market Alternations Using Social Media Sentiment Analysis and Deep Neural Networks}, 
+  year={2023},
+  volume={},
+  number={},
+  pages={1-8},
+  keywords={Sentiment analysis;Social networking (online);Blogs;Artificial neural networks;Feature extraction;Indexes;Risk management;Stock Forecasting;Social Media Analysis;Sentiment Analysis;Natural Language Processing;Deep Neural Networks;Twitter;Recurrent Neural Networks;Convolutional Neural Networks},
+  doi={10.1109/IISA59645.2023.10345902}}
+}</pre>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div>
+          <h3 class="pub-title">Forecasting Stock Market Alternations Using Social Media Sentiment Analysis and Regression Techniques</h3>
+          <p class="pub-authors"><span class="author-me">Christina Saravanos</span>, Andreas Kanavos</p>
+          <p class="pub-venue"><span class="venue-name">IFIP International Conference on Artificial Intelligence Applications and Innovations</span>, 2023</p>
+          <div class="btns">
+            <a class="btn" data-role="abstract" href="#">Abstract</a>
+            <a class="btn" data-role="cite" href="#">Cite</a>
+          </div>
+          <div class="abstract-box" hidden>
+            <p>In recent years, the public opinion is swayed by online social, media and news platforms, such as Twitter, podcasts, and streaming news broadcasts. The public opinion can alter the outcome of various social-economic events, e.g., the volatility of the stock market. This paper presents an overview of forecasting the volatility of the indices of several companies in the U.S. stock market while considering the sentiment and features extracted from the metadata of a tweet and its author’s social activity and network. The daily changes in the prices of an index in the U.S. stock market were estimated by applying several regression techniques. The results indicate a strong correlation between the approximated closing prices of the stocks in the U.S. stock market, the sentiment along with the features extracted from a tweet, and its author’s activity and network. Finally, the obtained results indicate that the number of attributes did not impact the performance of the applied regression techniques.</p>
+          </div> 
+          <div class="cite-box" hidden>
+            <pre>@InProceedings{10.1007/978-3-031-34171-7_27,
+author="Saravanos, Christina
+and Kanavos, Andreas",
+editor="Maglogiannis, Ilias
+and Iliadis, Lazaros
+and Papaleonidas, Antonios
+and Chochliouros, Ioannis",
+title="Forecasting Stock Market Alternations Using Social Media Sentiment Analysis and Regression Techniques",
+booktitle="Artificial Intelligence  Applications  and Innovations. AIAI 2023 IFIP WG 12.5 International Workshops",
+year="2023",
+publisher="Springer Nature Switzerland",
+address="Cham",
+pages="335--346",
+abstract="In recent years, the public opinion is swayed by online social, media and news platforms, such as Twitter, podcasts, and streaming news broadcasts. The public opinion can alter the outcome of various social-economic events, e.g., the volatility of the stock market. This paper presents an overview of forecasting the volatility of the indices of several companies in the U.S. stock market while considering the sentiment and features extracted from the metadata of a tweet and its author&#39;s social activity and network. The daily changes in the prices of an index in the U.S. stock market were estimated by applying several regression techniques. The results indicate a strong correlation between the approximated closing prices of the stocks in the U.S. stock market, the sentiment along with the features extracted from a tweet, and its author&#39;s activity and network. Finally, the obtained results indicate that the number of attributes did not impact the performance of the applied regression techniques.",
+isbn="978-3-031-34171-7"
+}
+</pre>
+          </div>
+        </div>  
+      </article>
+
+      <article class="pub">
+        <div id="neighborhood-pollution-pub">
+          <h3 class="pub-title">Neighborhood-Level Particle Pollution Assessment during the COVID-19 Pandemic via a Novel IoT Solution</h3>
+          <p class="pub-authors">Christos Spandonidis, Dimitrios Paraskevopoulos,  <span class="author-me">Christina Saravanos</span></p>
+          <p class="pub-venue"><span class="venue-name">MDPI Sustainability</span>, 2023.</p>
+          <div class="btns">
+            <a class="btn" data-role="abstract" href="#">Abstract</a>
+            <a class="btn" data-role="cite" href="#">Cite</a>
+          </div>
+          <div class="abstract-box" hidden>
+            <p>In recent years, the concentration levels of various air pollutants have been constantly increasing, primarily due to the high vehicle flow. In 2020, however, severe lockdowns in Greece were imposed to reduce the spread of the COVID-19 pandemic, which led to a rapid reduction in the concentration levels of air pollutants such as PM2.5 and PM10 in the atmosphere. Initially, this paper seeks to identify the correlation between the concentration levels of PM10 and the traffic flow by acquiring data from low-cost IoT devices which were placed in Thessaloniki, Greece, from March to August 2020. The correlation and the linearity between the two parameters were further investigated by applying descriptive analytics, regression techniques, Pearson correlation, and independent T-testing. The obtained results indicate that the concentration levels of PM10 are strongly correlated to the vehicle flow. Therefore, the results hint that the decrease in the vehicle flow could result in improving the quality of environmental air. Finally, the acquired results point out that the temperature and humidity are weakly correlated with the concentration levels of PM10 present in the atmosphere.</p>
+          </div>
+          <div class="cite-box" hidden>
+            <pre>
+@Article{su15108233,
+AUTHOR = {Spandonidis, Christos and Paraskevopoulos, Dimitrios and Saravanos, Christina},
+TITLE = {Neighborhood-Level Particle Pollution Assessment during the COVID-19 Pandemic via a Novel IoT Solution},
+JOURNAL = {Sustainability},
+VOLUME = {15},
+YEAR = {2023},
+NUMBER = {10},
+ARTICLE-NUMBER = {8233},
+URL = {https://www.mdpi.com/2071-1050/15/10/8233},
+ISSN = {2071-1050},
+ABSTRACT = {In recent years, the concentration levels of various air pollutants have been constantly increasing, primarily due to the high vehicle flow. In 2020, however, severe lockdowns in Greece were imposed to reduce the spread of the COVID-19 pandemic, which led to a rapid reduction in the concentration levels of air pollutants such as PM2.5 and PM10 in the atmosphere. Initially, this paper seeks to identify the correlation between the concentration levels of PM10 and the traffic flow by acquiring data from low-cost IoT devices which were placed in Thessaloniki, Greece, from March to August 2020. The correlation and the linearity between the two parameters were further investigated by applying descriptive analytics, regression techniques, Pearson correlation, and independent T-testing. The obtained results indicate that the concentration levels of PM10 are strongly correlated to the vehicle flow. Therefore, the results hint that the decrease in the vehicle flow could result in improving the quality of environmental air. Finally, the acquired results point out that the temperature and humidity are weakly correlated with the concentration levels of PM10 present in the atmosphere.},
+DOI = {10.3390/su15108233}
+}
+</pre>
+          </div>
+        </div>    
+      </article>
+
+      <article class="pub">
+        <div>
+          <h3 class="pub-title">Design and implementation of a digital twin of a ship for sustainable operations”</h3>
+          <p class="pub-authors">Christos Spandonidis, Dimitrios Paraskevopoulos,  <span class="author-me">Christina Saravanos</span></p>
+          </div>
+
+      </article>
+
+      <article class="pub">
+        <div id="discovering-influential-twitter-pub">
+          <h3 class="pub-title">Discovering influential Twitter authors via clustering and ranking on Apache Storm</h3>
+          <p class="pub-authors"><span class="author-me">Christina Saravanos</span>, Georgios Drakopoulos, Andreas Kanavos, Eleanna Kafeza, Christos Makris</p>
+          <p class="pub-venue"><span class="venue-name">2021 12th International Conference on Information, Intelligence, Systems & Applications (IISA)</span>, 2021.</p>
+          <div class="btns">
+            <a class="btn" data-role="abstract" href="#">Abstract</a>
+            <a class="btn" data-role="cite" href="#">Cite</a>
+          </div>
+          <div class="abstract-box" hidden>
+            <p>
+Nowadays several millions of people are throughout the day active, while hundreds of new accounts are created daily on social media. Thousands of short-length posts or tweets are posted on Twitter, a popular micro-blogging platform by a vast variety of authors and thus creating a widely diverse social content. The emerged diversity not only does indicate a remarkable strength, but also reveals a certain kind of difficulty when attempting to find Twitter's authoritative and influencing authors. This work introduces a two-step algorithmic approach for discovering these authors. A set of metrics and features are, firstly, extracted from the social network e.g. friends and followers and the content of the tweets written by the author are extracted. Then, Twitter's most authoritative authors are discovered by employing two distinct approaches, one which relies on probabilistic while the other applies fuzzy clustering. In particular, the former, initially, employs the Gaussian Mixture Model to identify the most authoritative authors and then introduces a novel ranking technique which relies on computing the cumulative Gaussian distribution of the extracted metrics and features. On the other hand, the latter combines the Gaussian Mixture Model with fuzzy c-means and subsequently the derived authors are ranked via the Borda count technique. The results indicate that the second scheme was able to find more authoritative authors in the benchmark dataset. Both approaches were designed, implemented, and executed on a local cluster of the Apache Storm framework, a cloud-based platform which supports streaming data and real-time scenarios.</p>
+          </div>     
+          <div class="cite-box" hidden>
+            <pre>@INPROCEEDINGS{9555528,
+  author={Saravanos, Christina and Drakopoulos, Georgios and Kanavos, Andreas and Kafeza, Eleanna and Makris, Christos},
+  booktitle={2021 12th International Conference on Information, Intelligence, Systems & Applications (IISA)}, 
+  title={Discovering Influential Twitter Authors Via Clustering And Ranking On Apache Storm}, 
+  year={2021},
+  volume={},
+  number={},
+  pages={1-8},
+  keywords={Measurement;Social networking (online);Storms;Blogs;Gaussian distribution;Feature extraction;Probabilistic logic;Apache Storm;k-means;fuzzy c-means;Gaussian Mixture models;Borda count;Twitter influence;voting;ranking methods;list fusion;fuzzy clustering},
+  doi={10.1109/IISA52424.2021.9555528}}</pre>   
+          </div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div id="audio-fingerprinting-pub">
+          <h3 class="pub-title">Audio-fingerprinting via Dictionary Learning</h3>
+          <p class="pub-authors"><span class="author-me">Christina Saravanos</span>, Dimitris Ampeliotis and Kostas Berberidis</p>
+          <p class="pub-venue"><span class="venue-name"> 2020 IEEE 22nd International Workshop on Multimedia Signal Processing (MMSP)</span>, 2020.</p>
+          <div class="btns">
+            <a class="btn" data-role="abstract" href="#">Abstarct</a>
+            <a class="btn" data-role="cite" href="#">Cite</a>
+          </div>
+          <div class="abstract-box" hidden>
+            <p>In recent years, several successful schemes have been proposed to solve the song identification problem. These techniques aim to construct a signal's audio-fingerprint by either employing conventional signal processing techniques or by computing its sparse representation in the time-frequency domain. This paper proposes a new audio-fingerprinting scheme which is able to construct a unique and concise representation of an audio signal by applying a dictionary, which is learnt here via the well-known K-SVD algorithm applied on a song database. The promising results which emerged while conducting the experiments suggested that, not only the proposed approach preformed rather well in its attempt to identify the signal content of several audio clips -even in cases this content had been distorted by noise - but also surpassed the recognition rate of a Shazam-based paradigm.</p>
+          </div>     
+          <div class="cite-box" hidden>
+            <pre>@INPROCEEDINGS{9287073,
+  author={Saravanos, Christina and Ampeliotis, Dimitris and Berberidis, Kostas},
+  booktitle={2020 IEEE 22nd International Workshop on Multimedia Signal Processing (MMSP)}, 
+  title={Audio-Fingerprinting via Dictionary Learning}, 
+  year={2020},
+  volume={},
+  number={},
+  pages={1-7},
+  keywords={Time-frequency analysis;Dictionaries;Databases;IEEE Sections;Signal processing algorithms;Machine learning;Fingerprint recognition;song identification;audio-fingerprinting;sparse coding;dictionary learning;K-SVD;OMP},
+  doi={10.1109/MMSP48831.2020.9287073}}</pre>   
+          </div>
+        </div>
+      </article>
+
+    </section>
+    <hr class="sep" />
+    <!-- Notable Projects -->
+    <section id="notable-projects" aria-labelledby="notable-projects-title">
+      <h2 id="notable-projects-title">Notable Projects</h2>
+
+      <article class="project">
+        <div>
+          <h3 class="project-title">Entity Extraction From Large Document Datasets Via LLMs</h3>
+          <p class="project-description"> Evaluated and implemented various techniques that relied on using LLMs and prompts to extract entities from documents.</p> 
+          <div class="btns">
+            <a class="btn" data-role="details" href="#">More Details</a>
+          </div>
+          <div class="details-box" hidden>
+            <p style="font-weight: 700; color: #5E1B56; margin: 12px 0 8px 0;">Key Features</p>
+            <ul>
+              <li>Implemented a pipeline in python that aims to effectively detect entities from a large text corpora using RAG and LLMs.</li>
+              <li>Evaluated the performance of the annotators using various LLMs, prompts and tool-calling techniques.</li>
+            </ul>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-tag">NER</span>
+            <span class="tech-tag">GenAI</span>
+            <span class="tech-tag">RAG</span>
+            <span class="tech-tag">LLMs</span>
+            <span class="tech-tag">prompt engineering</span>
+            <span class="tech-tag">tool calling</span>
+            <span class="tech-tag">Python</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3 class="project-title">Automated Playlist Generation Via Deep Learning</h3>
+          <p class="project-description">Creating a technique that automatically updates playlists on Spotify using RNNs and the timbral features of a song</p>
+          <div class="btns">
+            <a class="btn" data-role="details" href="#">More Details</a>
+          </div>
+          <div class="details-box" hidden>
+            <p style="font-weight: 700; color: #5E1B56; margin: 12px 0 8px 0;">Key Implementation</p>
+            <ul>
+              <li>The approach aims to detect which audio tracks have similar timbral features to the existings songs in the playlist</li>
+              <li>The approach aims to return songs with similar timbral features that the user is most likely to hear in the future.</li>
+            </ul>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-tag">Music Signals</span>
+            <span class="tech-tag">RNN</span>
+            <span class="tech-tag">tensorflow</span>
+            <span class="tech-tag">Spotify API</span>
+            <span class="tech-tag">librosa</span>
+            <span class="tech-tag">Python</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3 class="project-title">Music Genre Classification Based on Deep and Dictionary Learning</h3>
+          <p class="project-description">Pipelines developed in MATLAB and in Python to classify songs to various music genres using Deep and Dictionary Learning techniques.</p>
+          <div class="btns">
+            <a class="btn" data-role="details" href="#">More Details</a>
+          </div>
+          <div class="details-box" hidden>
+            <p style="font-weight: 700; color: #5E1B56; margin: 0 0 8px 0;">Key Developments:</p            <ul>
+                <li>Developed two pipelines in Python and in MATLAB that extracted the Mel-Frequency Cepstrum Coefficients (MFCCs) from various audio tracks</li>
+                <li>Trained a Convolutional Neural Network (CNN) based on the MFCCs of a hundred audio tracks</li>
+                <li>Learned a dictionary based on the MFCCs of a hundred songs by using the K-SVD algorithm</li>
+                <li>The CNN and the Dictionary Learning approach correctly identified the genre of various songs</li>
+                <li>The Dictionary Learning approach out-performed the CNN</li>
+            </ul>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-tag">MFCCs</span>
+            <span class="tech-tag">Classification</span>
+            <span class="tech-tag">CNN</span>
+            <span class="tech-tag">Dictionary Learning</span>
+            <span class="tech-tag">K-SVD</span>
+            <span class="tech-tag">librosa</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">MATLAB</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3 class="project-title">Cover Song Identification</h3>
+          <p class="project-description"> Contributed to the development of a pipeline that identifies cover songs using chromagram features, convolutional neural networks and similarity measures.</p>
+          
+          <div class="btns">
+            <a class="btn" data-role="details" href="#">More Details</a>
+          </div>
+          <div class="details-box" hidden>
+            <p style="font-weight: 700; color: #5E1B56; margin: 0 0 8px 0;">Key Developments</p>
+            <ul>
+              <li>Extracted chroma features from the chromagram of several dozen cover, live, and original audio recordings.</li>
+              <li>Trained a Convolutional Neural Network using the chroma features of the original recordings of several songs.</li>
+              <li>Implemented a similarity measure to compare the chroma features of the cover and live recordings with those of the original songs</li>
+              <li>The developed approach was able to successfully identify several cover songs</li>
+            </ul>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-tag">Chroma Features</span>
+            <span class="tech-tag">CNNs</span>
+            <span class="tech-tag">tensforflow</span>
+            <span class="tech-tag">librosa</span>
+            <span class="tech-tag">Python</span>
+          </div>
+        </div>
+      </article>
+
+      
+      <article class="project">
+        <div>
+          <h3 class="project-title">Song Identification Via Data-Driven Dictionaries</h3>
+          <p class="project-description">A song identification scheme that relies on data-driven dictionaries learned by using Discriminative Dictionary Learning approaches such as LC-KSVD and correlation techniques to identify audio clips.</p>
+            
+            
+            
+            </p>
+          <div class="btns">
+            <a class="btn" data-role="details" href="#">More Details</a>
+          </div>
+          <div class="details-box" hidden>
+            <p style="font-weight: 700; color: #5E1B56; margin: 0 0 8px 0;">Key Implementation</p>
+            <ul>
+              <li> Proposed, designed, and developed a song identification scheme that utilizes data-driven dictionaries learned using the songs of a music database and identifies the audio clip via correlation techniques.</li>
+              <li> The song identification scheme proved to be more robust and effective than other paradigms that relied on conventional signal processing and dictionary learning approaches.</li>
+              <li> The developed approach was evaluated using several audio clips that had been distorted by noise simulating real-world environments.</li>
+              <li> The proposed approach was able to successfully identify several hundred audio clips even in cases where the signal had been severely distorted by noise.</li>
+            </ul>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-tag">Song Identification</span>
+            <span class="tech-tag">Discriminative Dictionary Learning</span>
+            <span class="tech-tag">LC-KSVD</span>
+            <span class="tech-tag">Sparse Coding</span>
+            <span class="tech-tag">OMP</span>
+            <span class="tech-tag">Pearson Correlation</span>
+            <span class="tech-tag">MATLAB</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div>
+          <h3 class="project-title">Predicting The U.S. Stock Market Volatility Via Social Media Analysis.</h3>
+          <p class="project-description">Developed a pipeline that predicts U.S. stock market volatility by combining historical stock market data with sentiment analysis from social media platforms.</p>
+          <div class="btns">
+            <a class="btn" data-role="details" href="#">More Details</a>
+          </div>
+          <div class="details-box" hidden>
+            <p style="font-weight: 700; color: #5E1B56; margin: 0 0 8px 0;">Key Features</p>
+            <ul>
+              <li>Implemented a pipeline that estimates or predicts the daily closing prices of several indices in the U.S. stock market by combining historical stock market data with sentiment analysis of Twitter data</li>
+              <li>Extracted features from the tweet metadata, the overall sentiment of a tweet and the overall presence of a tweet's author on the social media platform</li>
+              <li>Applied several regression techniques and deep neural networks to estimate the daily closing prices of the U.S. stock market indices</li>
+              <li>Evaluated the correlation between the predicted closing prices of an index, the sentiment expressed in tweets, and the extracted features</li>
+            </ul>
+            <p style="font-weight: 400; color: #000000; margin: 12px 0 8px 0;">The findings of this project were published in the following publications:</p>
+            <ul>
+              <li><a href="#forecasting-stock-market-volatility-pub">Forecasting stock market volatility using social media sentiment analysis</a></li>
+              <li><a href="#forecasting-stock-market-alternations-pub">Forecasting stock market alternations using social media sentiment analysis and deep neural networks</a></li>
+              <li><a href="#forecasting-stock-market-regression-pub">Forecasting Stock Market Alternations Using Social Media Sentiment Analysis and Regression Techniques</a></li>
+            </ul>
+          </div>
+          <div class="tech-stack">
+            <span class="tech-tag">Sentiment Analysis</span>
+            <span class="tech-tag">Twitter</span>
+            <span class="tech-tag">Stock Market Volatility</span>
+            <span class="tech-tag">Regression</span>
+            <span class="tech-tag">Forecasting</span>
+            <span class="tech-tag">scikit-learn</span>
+            <span class="tech-tag">NLP</span>
+            <span class="tech-tag">nltk</span>
+            <span class="tech-tag">TensorFlow</span>
+            <span class="tech-tag">Python</span>
+          </div>
+        </div>
+      </article>
+
+
+    <footer>
+      © Copyright 2025 Christina Saravanos.
+    </footer>
+  </div>
+
+  <script>
+  // Handle all buttons (abstract, cite, and details)
+  document.querySelectorAll('.btn[data-role]').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const role = this.getAttribute('data-role');
+      const boxClass = role === 'abstract' ? 'abstract-box' : 
+                      role === 'cite' ? 'cite-box' : 'details-box';
+      
+      // Find the box - it should be the next sibling after .btns
+      let box = this.closest('.btns').nextElementSibling;
+      
+      // If not found, try to find it within the parent
+      if (!box || !box.classList.contains(boxClass)) {
+        box = this.closest('.btns').parentElement.querySelector('.' + boxClass);
+      }
+      
+      if (box && box.classList.contains(boxClass)) {
+        const isHidden = box.hasAttribute('hidden');
+       
+        if (isHidden) {
+          box.removeAttribute('hidden');
+          this.setAttribute('aria-expanded', 'true');
+          box.classList.add('open');
+        } else {
+          box.setAttribute('hidden', '');
+          this.setAttribute('aria-expanded', 'false');
+          box.classList.remove('open');
+        }
+        
+        if (role === 'details') {
+          this.classList.toggle('clicked', isHidden);
+        }
+      }
+    });
+  });
+  </script>
+</body>
+</html>
